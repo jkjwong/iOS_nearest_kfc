@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDB-nd-l7G" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qD6-bh-QVY">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="XO1-w6-DaS"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="6Ah-2D-nhh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="jDB-nd-l7G" secondAttribute="centerX" id="3Xl-XH-Ise"/>
+                            <constraint firstAttribute="centerX" secondItem="qD6-bh-QVY" secondAttribute="centerX" id="GJD-Yh-Qkh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qD6-bh-QVY" secondAttribute="trailing" constant="-16" id="OEn-T0-KKN"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jDB-nd-l7G" secondAttribute="bottom" multiplier="2" id="QEY-5m-ggN"/>
+                            <constraint firstItem="qD6-bh-QVY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="XGU-hA-27m"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="qD6-bh-QVY" secondAttribute="bottom" id="d8a-Gn-vF1"/>
+                            <constraint firstItem="jDB-nd-l7G" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="fge-nh-w3g"/>
+                            <constraint firstItem="qD6-bh-QVY" firstAttribute="top" secondItem="jDB-nd-l7G" secondAttribute="bottom" id="jEH-Ve-fuI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jDB-nd-l7G" secondAttribute="trailing" constant="-16" id="vj8-jK-7FI"/>
+                            <constraint firstItem="jDB-nd-l7G" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="wQI-aI-dC2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="listNearestPlaces" destination="qD6-bh-QVY" id="XSd-Bh-ucH"/>
+                        <outlet property="mapView" destination="jDB-nd-l7G" id="8aK-fp-w2y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
